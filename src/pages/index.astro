@@ -1,9 +1,33 @@
 ---
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Form from "../components/Form.astro";
+import Testimonials from "../components/Testimonials.astro";
+
+const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
+
+const response = await fetch(url,{
+    method:"GET",
+    headers:{
+        apikey: key,
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+    },
+	});
+
+	const udsagn = await response.json();
 ---
-<Mainlayout title="Testimonials">
+
+
+<Mainlayout title="Anmeldlser">
 <main>
 	<Form />
+	<ul>
+		{
+		udsagn.map((testimonial) => {
+			return <Testimonials name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text} />
+		})
+		}
+	</ul>
 </main>	
 </Mainlayout>
