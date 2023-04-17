@@ -3,7 +3,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
 import Form from "../components/Form.astro";
 import Testimonials from "../components/Testimonials.astro";
 
-const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials";
+const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?approved=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
 
 const response = await fetch(url,{
@@ -16,18 +16,27 @@ const response = await fetch(url,{
 	});
 
 	const udsagn = await response.json();
+
+	/* function getFirstNChars(str, length) {
+		//vis kun et begrænset antal karakterer 
+		return str.substring(0, length);
+	} */
 ---
 
 
-<Mainlayout title="Anmeldlser">
+<Mainlayout title="Anmeldelser">
 <main>
 	<Form />
 	<ul>
 		{
 		udsagn.map((testimonial) => {
-			return <Testimonials name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text} />
+			return <Testimonials name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text} 
+			 />
 		})
 		}
 	</ul>
+
+<!-- text = {getFirstNChars(testimonial.test,30)+"..."} link = {"/testimonial/"+testimonial.id} -->
+
 </main>	
 </Mainlayout>
