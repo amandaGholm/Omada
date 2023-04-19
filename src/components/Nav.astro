@@ -1,130 +1,100 @@
 ---
 
 ---
-<nav>
-    <div class="logo">
-      <a href="#">LOGO</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Hjem</a></li>
-      <li><a href="#">Om os</a></li>
-      <li><a href="#">Kontakt</a></li>
-    </ul>
-    <div class="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </nav>
+<header>
+    <nav>
+       <a href="/index">OMADA.DEIL</a>
+       <div class="burger-menu">&#9776;</div>
+      <ul class="menu">
+        <li><a href="/">WINES</a></li>
+        <li><a href="">WINEMAKERS</a></li>
+        <li><a href="">REGIONS</a></li>
+        <li><a href="">SUBSCRIPTION</a></li>
+        <li><a href="">BOXES</a></li>
+        <li><a href="">SOCIAL CLUB</a></li>
+        <li><a href="">GIFT CARD</a></li>
+        <li><a href="">DELI</a></li>
+      </ul>
+      
+    </nav>
+  </header>
   
+  <style>
 
-<style>
-    nav {
+/* Desktop menu styling */
+.menu {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  height: 80px;
-  padding: 0 50px;
+  justify-content: left;
+  align-items: left;
+  font-family: ;
+  font-size: 14px;
+  color: black;
 }
 
-.logo a {
-  color: white;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.menu li {
+  margin: 0 20px;
+  list-style-type: none;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
+li a {
+    font-family: aviano-sans,sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
 }
 
-.nav-links li a {
-  color: white;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-}
-
-.burger {
+/* Mobile menu styling */
+.burger-menu {
   display: none;
-  cursor: pointer;
+  font-size: 28px;
+  color: black;
 }
 
-.burger .line {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px;
-}
-
-@media screen and (max-width: 700px) {
-  .nav-links {
+@media screen and (max-width: 1000px) {
+  .menu {
     display: none;
   }
-  
-  .burger {
+
+  .burger-menu {
     display: block;
   }
-  
-  nav {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    padding: 0;
+
+  /* Mobile menu expanded styling */
+
+  .menu.active {
+    display: block;
+    background-color:;
+    text-align: left;
+    z-index: 1;
   }
-  
-  .nav-links li {
-    margin-top: 20px;
-  }
-  
-  .burger .line {
-    transition: all 0.3s ease;
-  }
-  
-  .nav-active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-active li {
-    opacity: 0;
-  }
-  
-  .burger.active .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  
-  .burger.active .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .burger.active .line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  
-  .burger.active ~ .nav-active {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .nav-active li {
-    opacity: 1;
-    transition: opacity 0.3s ease 0.3s;
+
+  .menu.active li {
+    display: block;
+    margin: 20px 0;
   }
 }
-</style>
+
+
+  </style>
+
+  <script>
+const burgerMenu = document.querySelector('.burger-menu');
+const menu = document.querySelector('.menu');
+
+burgerMenu.addEventListener('click', function() {
+  burgerMenu.classList.toggle('active');
+  menu.classList.toggle('active');
+});
+
+const menuItems = document.querySelectorAll('.menu li');
+
+menuItems.forEach(function(item) {
+  item.addEventListener('click', function() {
+    burgerMenu.classList.remove('active');
+    menu.classList.remove('active');
+  });
+});
+
+  </script>
