@@ -2,6 +2,7 @@
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Form from "../components/Form.astro";
 import Testimonials from "../components/Testimonials.astro";
+import Nav from "../components/Nav.astro";
 
 const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?approved=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
@@ -24,10 +25,11 @@ const response = await fetch(url,{
 ---
 
 
-<Mainlayout title="Anmeldelser">
+<Mainlayout>
 <main>
 
-	
+<Nav/>
+
 	<Form />
 	<ul>
 		{
