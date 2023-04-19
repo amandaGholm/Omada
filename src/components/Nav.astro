@@ -3,7 +3,7 @@
 ---
 <header>
     <nav>
-       <a href="/index">OMADA.DEIL</a>
+       <div class="logo"><a href="/index">OMADA.DEIL</a></div>
        <div class="burger-menu">&#9776;</div>
       <ul class="menu">
         <li><a href="/">WINES</a></li>
@@ -22,6 +22,18 @@
   <style>
 
 /* Desktop menu styling */
+
+.logo{
+display: flex;
+justify-content: center;
+padding: 4px;
+}
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+}
 .menu {
   display: flex;
   justify-content: left;
@@ -53,7 +65,11 @@ li a {
 }
 
 @media screen and (max-width: 1000px) {
-  .menu {
+  
+    .logo a{
+    font-size: 22px;
+}
+    .menu {
     display: none;
   }
 
