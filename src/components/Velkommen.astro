@@ -1,0 +1,40 @@
+---
+
+---
+
+<section>
+    <img id="b1" src="/glas.png" alt="">
+<h1>Velkommen til Omada Deli</h1>
+<img id="b2" src="/glasMenu.png" alt="">
+</section>
+
+
+
+<style>
+section{
+    display: grid;
+    max-width: 100vw;
+}
+
+#b1 , h1{
+    grid-area: 1/1;
+}
+
+h1{
+    place-self: center center;
+    color: aliceblue;
+    font-size: 20px;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 700px)
+{
+    section{
+    grid-template-columns: 1fr 1fr;}
+
+}
+
+</style>
