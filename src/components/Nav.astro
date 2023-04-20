@@ -1,116 +1,106 @@
 ---
 
 ---
+
 <header>
-    <nav>
-       <div class="logo"><a href="/index">OMADA.DELI</a></div>
-       <div class="burger-menu">&#9776;</div>
-      <ul class="menu">
-        <li><a href="/">WINES</a></li>
-        <li><a href="">WINEMAKERS</a></li>
-        <li><a href="">REGIONS</a></li>
-        <li><a href="">SUBSCRIPTION</a></li>
-        <li><a href="">BOXES</a></li>
-        <li><a href="">SOCIAL CLUB</a></li>
-        <li><a href="">GIFT CARD</a></li>
-        <li><a href="">DELI</a></li>
-      </ul>
-      
-    </nav>
-  </header>
-  
-  <style>
+  <nav>
+     <div class="logo"><a href="/index">OMADA.DELI</a></div>
+     <div class="burger-menu">&#9776;</div>
+     <ul class="menu">
+         <li><a href="/">WINES</a></li>
+         <li><a href="">WINEMAKERS</a></li>
+         <li><a href="">REGIONS</a></li>
+         <li><a href="">SUBSCRIPTION</a></li>
+         <li><a href="">BOXES</a></li>
+         <li><a href="">SOCIAL CLUB</a></li>
+         <li><a href="">GIFT CARD</a></li>
+         <li><a href="">DELI</a></li>
+     </ul>
+  </nav>
+</header>
 
-/* Desktop menu styling */
-
-.logo{
-display: flex;
-justify-content: center;
-padding: 4px;
-}
-.logo a{
-    text-decoration: none;
-    color: black;
-    font-weight: 700;
-    font-size: 30px;
-}
-.menu {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  font-family: ;
-  font-size: 14px;
-  color: black;
-}
-
-.menu li {
-  margin: 0 20px;
-  list-style-type: none;
-}
-
-li a {
-    font-family: aviano-sans,sans-serif;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: black;
-}
-
-/* Mobile menu styling */
-.burger-menu {
-  display: none;
-  font-size: 28px;
-  color: black;
-}
-
-@media screen and (max-width: 1000px) {
-  
-    .logo a{
-    font-size: 22px;
-}
-    .menu {
-    display: none;
+<style>
+  /* Mobile menu styling */
+  .logo{
+      display: flex;
+      justify-content: center;
+      padding: 4px;
   }
-
-  .burger-menu {
-    display: block;
+  .logo a{
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+      font-size: 22px;
   }
-
-  /* Mobile menu expanded styling */
-
+  .menu {
+      display: none;
+      background-color: white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      margin-top: 10px;
+      text-align: center;
+  }
   .menu.active {
-    display: block;
-    background-color:;
-    text-align: left;
-    z-index: 1;
+      display: block;
+  }
+  .menu li {
+      margin: 20px 0;
+      list-style-type: none;
+  }
+  li a {
+      font-family: aviano-sans, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: black;
+  }
+  .burger-menu {
+      display: block;
+      font-size: 28px;
+      color: black;
   }
 
-  .menu.active li {
-    display: block;
-    margin: 20px 0;
+  /* Desktop menu styling */
+  @media screen and (min-width: 1000px) {
+      .logo a {
+          font-size: 30px;
+      }
+      .menu {
+          display: flex;
+          justify-content: left;
+          align-items: left;
+          font-family: ;
+          font-size: 14px;
+          color: black;
+          position: static;
+          margin-top: 0;
+      }
+      .menu li {
+          margin: 0 20px;
+          list-style-type: none;
+      }
   }
-}
+</style>
 
+<script>
+  const burgerMenu = document.querySelector('.burger-menu');
+  const menu = document.querySelector('.menu');
+  const menuItems = document.querySelectorAll('.menu li');
 
-  </style>
-
-  <script>
-const burgerMenu = document.querySelector('.burger-menu');
-const menu = document.querySelector('.menu');
-
-burgerMenu.addEventListener('click', function() {
-  burgerMenu.classList.toggle('active');
-  menu.classList.toggle('active');
-});
-
-const menuItems = document.querySelectorAll('.menu li');
-
-menuItems.forEach(function(item) {
-  item.addEventListener('click', function() {
-    burgerMenu.classList.remove('active');
-    menu.classList.remove('active');
+  burgerMenu.addEventListener('click', function() {
+      burgerMenu.classList.toggle('active');
+      menu.classList.toggle('active');
   });
-});
 
-  </script>
+  menuItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+          burgerMenu.classList.remove('active');
+          menu.classList.remove('active');
+      });
+  });
+</script>
+
