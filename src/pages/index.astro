@@ -4,6 +4,7 @@ import Form from "../components/Form.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Nav from "../components/Nav.astro";
 import Velkommen from "../components/Velkommen.astro";
+import Produkter from "../components/Produkter.astro";
 
 const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?approved=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
@@ -32,6 +33,8 @@ const response = await fetch(url,{
 <Nav/>
 
 <Velkommen/>
+
+<Produkter/>
 
 <!--  <Form />
 	<ul>
