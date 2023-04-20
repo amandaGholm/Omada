@@ -4,25 +4,50 @@
 <h2>POPULÆRE PRODUKTER</h2>
 
 <section>
-    <img src="/img1.png" alt="">
-    <img src="/img2.png" alt="">
-    <img src="/img3.png" alt="">
-    <img src="/img4.png" alt="">
-    <img src="/img5.png" alt="">
-    <img src="/img8.png" alt="">
+<div><img src="/img1.jpg" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div><img src="/img1.jpg" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div><img src="/img1.jpg" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div><img src="/img1.jpg" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div><img src="/img1.jpg" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div><img src="/img1.jpg" alt=""><p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>            
 </section>
 
 <style>
-    section{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
+  
+  p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .orange{
+    color: #F86150;
+  }
+  h2{
+    display: grid;
+    justify-items: center;
+  }
 
     img{
         max-width: 100%;
-    }
+        height: auto; 
+     }
 
-    section :nth-child(1){
-        margin-bottom: 10px;
-    }
+
+     section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 250px));
+  gap: 17px;
+  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  section {
+    grid-template-columns: repeat(3, minmax(150px, 250px));
+  }
+}
+
 </style>
