@@ -6,7 +6,7 @@
 
 <section class="menu">
 
-    <img src="/tapas.png" alt="">
+<img src="/tapas.png" alt="" style="margin: auto;">
 
 <div class="tekst">  <div>
     <h3>At drikke</h3>
@@ -62,34 +62,46 @@ kr. 40 ,- <br> <br>
 
 
 <style>
+    h2{
+        text-align: center;
+        font-size: 1.rem;
+    }
 
     h3{
         text-align: center;
+        font-size: 1.3rem;
     }
        .menu{
         display: grid;
         grid-template-columns: 1fr ;
         margin: 0 5% 0 5%;
+        
     }
 
     img , .tekst {
         grid-area: 1/1;
+        
     }
 
     .tekst{ place-self: center center;
     display: grid;
 grid-template-columns: 1fr 1fr;
+gap:5rem;
  }
 
     img{
-        width: 100%;
+        max-width: 100%;
         object-fit: cover;
+       opacity: 70%;
     } 
 
     p{
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.2;
-    }¨
+  font-size: 1.3rem;
+    }
+
+
 
 </style>
