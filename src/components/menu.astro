@@ -4,9 +4,13 @@
 
 <h2>MENU</h2>
 
-<section>
-<div> <p>
+<section class="menu">
 
+    <img src="/tapas.png" alt="">
+
+<div class="tekst">  <div>
+    <h3>At drikke</h3>
+     <p>
 Vin på glas <br>
 fra kr. 70 ,- <br> <br>
 
@@ -26,39 +30,66 @@ kr. 35 ,- <br> <br>
 kr. 40 ,- <br> <br>
 
     </p> </div>
-    <div> <p>
-        Tapas platte <br>
-kr. 250 ,- <br> <br>
-
-Surdejsbrød m. olivenolie <br>
-kr. 50,- pr. servering <br> <br>
-
-Straciaella af friskost <br>
-kr. 50 ,- pr.servering <br> <br>
-
-Lufttørret skinke +6 måneder <br>
-kr. 120,- pr servering <br> <br>
-
-Lufttørret skinke +12 måneder <br>
-kr. 120,- pr servering <br> <br>
-
-Lufttørret salami <br>
-kr. 100,- pr. servering <br> <br>
-
-Kartoffelchips <br>
-kr. 35,- <br> <br>
-
-            </p> </div>
-
-            <img src="/tapas.png" alt="">
+ 
+    <div> 
+        <h3>At spise</h3> <p>
+         Tapas platte <br>
+     kr. 250 ,- <br> <br>
+     
+     Surdejsbrød m. olivenolie <br>
+     kr. 50,- pr. servering <br> <br>
+     
+     Straciaella af friskost <br>
+     kr. 50 ,- pr.servering <br> <br>
+     
+     Lufttørret skinke +6 måneder <br>
+     kr. 120,- pr servering <br> <br>
+     
+     Lufttørret skinke +12 måneder <br>
+     kr. 120,- pr servering <br> <br>
+     
+     Lufttørret salami <br>
+     kr. 100,- pr. servering <br> <br>
+     
+     Kartoffelchips <br>
+     kr. 35,- <br> <br>
+     
+             </p> </div> </div>  
+           
 
 </section>
 
+
+
 <style>
+
+    h3{
+        text-align: center;
+    }
+       .menu{
+        display: grid;
+        grid-template-columns: 1fr ;
+        margin: 0 5% 0 5%;
+    }
+
+    img , .tekst {
+        grid-area: 1/1;
+    }
+
+    .tekst{ place-self: center center;
+    display: grid;
+grid-template-columns: 1fr 1fr;
+ }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    } 
+
     p{
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.2;
-    }
-   
+    }¨
+
 </style>
