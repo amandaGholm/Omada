@@ -2,10 +2,13 @@
 
 ---
 
-<section>
-    <img id="b1" src="/nyvin.png" alt="">
-<h1>Velkommen til Omada Deli <br> FÅ 10% PÅ DIN YNGLINGS VIN, VED KØB AF DELI VARE FOR OVER 250KR </h1>
-<img id="b2" src="/nymenu.png" alt="">
+<section class="billeder">
+  <div class="b1">  <img src="/glas1.png" alt="">
+    <img id="b2" src="/glasMenu1.png" alt="">
+  </div>
+  
+<h1>Velkommen til <br> <span id="omadaDeli">Omada Deli</span>  <br> <br> FÅ 10% PÅ DIN <br> YNGLINGS VIN, VED KØB <br> AF DELI VARE FOR OVER <br> 250KR </h1>
+
 </section>
 <section class="abningstider">
     <p class="p1">ONSDAG - SØNDAG 11 - 20</p>
@@ -14,6 +17,8 @@
   </section>
   
   <style>
+
+    /* Banner */
     .abningstider {
       position: relative;
       overflow: hidden;
@@ -61,54 +66,39 @@
         left: 100%;
       }
     }
-  
-  
- 
-  
-  
-  
-  
 
-  
-  @keyframes banner {
-    0% {
-      left: -100%;
-    }
-    
-    100% {
-      left: 100%;
-    }
-  }
 
-  @keyframes banner2 {
-    0% {
-      left: -150%;
-    }
-    
-    100% {
-      left: 100%;
-    }
-  }
-  
-
-    
-section{
+ /* Billeder */ 
+  #omadaDeli{
+color: #F86150;
+font-size: 3rem;
+font-weight: 600;
+  }  
+.billeder{
     display: grid;
     max-width: 100vw;
 background-color: rgb(128, 128, 128);
 grid-template-columns: 1fr;
 }
 
-#b1 , h1{
+.b1 , h1{
     grid-area: 1/1;
+}
+
+.b1{
+  display: flex;
+justify-items: center;
 }
 
 h1{
     place-self: center center;
-    color: #FFFEF2 ;
+   text-align: center;
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: 7vw;
+    
+    background-color: rgba(0, 0, 0, 0.463);
+   
+     color: #FFFEF2 ;
 }
 img{
     width: 100%;
@@ -128,15 +118,24 @@ img{
 
 @media screen and (min-width: 800px)
 {   section{
-    grid-template-columns: 1fr 1fr;
-  
+    grid-template-columns: 1fr 1fr; 
 }
+
+h1{
+        font-size: 2.67rem;
+    }
  
 img{
     width: 100%;
     height: auto;
     
 }
+
+#omadaDeli{
+font-size: 3.5rem;
+
+  }  
+
 }
 
 @media screen and (min-width: 1200px)
