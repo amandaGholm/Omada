@@ -4,18 +4,18 @@
 <h2>POPULÆRE PRODUKTER</h2>
 
 <section>
-<div class="produkt"><img src="/ansjosRedigeret.webp" alt=""> <p class="orange">Gamay</p>
-        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
+<div class="produkt"><img class="b" src="/ansjosRedigeret.webp" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br>98.00 -  298.00 kr </p></div>
 <div class="produkt"><img src="/coffeeRedigeret.webp" alt=""> <p class="orange">Gamay</p>
-        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
-<div class="produkt"><img src="/juiceRedigeret.webp" alt=""> <p class="orange">Gamay</p>
-        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
-<div class="produkt"><img src="/makrelRedigeret.webp" alt=""> <p class="orange">Gamay</p>
-        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>
-<div class="stop"><img src="/stop25.jpg" alt=""> 
+        <p>Kaffe - Gamay of the morning <br> 98.00 -  298.00 kr </p></div>
+<div class="produkt"><img class="b" src="/juiceRedigeret.webp" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> 98.00 -  298.00 kr </p></div>
+<div class="produkt"><img class="b" src="/makrelRedigeret.webp" alt=""> <p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> 98.00 -  298.00 kr </p></div>
+<div class="shop"><img id="bShop" src="/stop25.jpg" alt=""> 
         <p id="shopMere">SHOP DELI</p></div>
-<div class="produkt"><img src="/wineRedigeret.webp" alt=""><p class="orange">Gamay</p>
-        <p>Kaffe - Gamay of the morning <br> DKK 98.00 -  DKK 298.00 </p></div>            
+<div class="produkt"><img class="b" src="/wineRedigeret.webp" alt=""><p class="orange">Gamay</p>
+        <p>Kaffe - Gamay of the morning <br> 98.00 -  298.00 kr </p></div>            
 </section>
 
 <style>
@@ -28,13 +28,28 @@
     font-weight: 600;
     color: var(--color);
   }
-  .stop{
+
+  #shopMere:hover{
+ scale: 1.2;
+
+   cursor: pointer;
+  }
+
+  
+  .shop{
     background-color: #D83933;
   
   }
 .produkt p{
+  font-size: .8125rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  .b:hover{
+   border: 4px solid #F86150;
+   cursor: pointer;
+  }
+  
   .orange{
     color: #F86150;
     
@@ -49,6 +64,8 @@
     img{
         max-width: 100%;
         height: auto; 
+        border: 4px solid transparent; 
+  box-sizing: border-box;
      }
 
 
