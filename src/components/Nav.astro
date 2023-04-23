@@ -3,102 +3,111 @@
 ---
 
 <header>
-  <nav>
-     <div class="logo"><a href="/index">OMADA.DELI</a></div>
-     <div class="burger-menu">&#9776;</div>
-     <ul class="menu">
-         <li><a href="/">WINES</a></li>
-         <li><a href="">WINEMAKERS</a></li>
-         <li><a href="">REGIONS</a></li>
-         <li><a href="">SUBSCRIPTION</a></li>
-         <li><a href="">BOXES</a></li>
-         <li><a href="">SOCIAL CLUB</a></li>
-         <li><a href="">GIFT CARD</a></li>
-         <li><a href="">DELI</a></li>
-     </ul>
-  </nav>
+    <nav>
+       <div class="logo"><a href="/index">OMADA.DELI</a></div>
+       <div class="burger-menu">&#9776;</div>
+       <ul class="menu">
+           <li><a href="/">WINES</a></li>
+           <li><a href="">WINEMAKERS</a></li>
+           <li><a href="">REGIONS</a></li>
+           <li><a href="">SUBSCRIPTION</a></li>
+           <li><a href="">BOXES</a></li>
+           <li><a href="">SOCIAL CLUB</a></li>
+           <li><a href="">GIFT CARD</a></li>
+           <li><a href="">DELI</a></li>
+       </ul>
+    </nav>
 </header>
 
 <style>
-  /* Mobile menu styling */
-  .logo{
-      display: flex;
-      justify-content: center;
-      
-  }
-  .logo a{
-      text-decoration: none;
-      color: black;
-      font-weight: 700;
-      font-size: 22px;
-  }
-  .menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1;
-      margin-top: 10px;
-      text-align: center;
-  }
-  .menu.active {
-      display: block;
-  }
-  .menu li {
+    /* Mobile menu styling */
+    .logo{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .logo a{
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    .menu {
+        display: none;
+        left: 0;
+        z-index: 1;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .menu.active {
+        display: block;
+    }
+    .menu li {
+        margin: 20px 0;
+        list-style-type: none;
+    }
+    li a {
+        font-family: aviano-sans, sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: black;
+    }
+    .burger-menu {
+        display: block;
+        font-size: 28px;
+        color: black;
+        cursor: pointer;
+    }
 
-      list-style-type: none;
-  }
-  li a {
-      font-family: aviano-sans, sans-serif;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-decoration: none;
-      color: black;
-  }
-  .burger-menu {
-      display: block;
-      font-size: 28px;
-      color: black;
-  }
-
-  /* Desktop menu styling */
-  @media screen and (min-width: 1000px) {
-      .logo a {
-          font-size: 30px;
-      }
-      .menu {
-        display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-          align-items: left;
-          
-          font-size: 14px;
-          color: black;
-          position: static;
-         
-      }
-      .menu li {
-        
-      
-      }
-  }
+    /* Desktop menu styling */
+    @media screen and (min-width: 1000px) {
+    
+        .menu {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            font-family: ;
+            font-size: 14px;
+            color: black;
+            position: static;
+            margin-top: 0;
+        }
+        .menu li {
+            margin: 0 20px;
+            list-style-type: none;
+        }
+        .burger-menu {
+            display: none;
+        }
+    }
 </style>
 
 <script>
-  const burgerMenu = document.querySelector('.burger-menu');
-  const menu = document.querySelector('.menu');
-  const menuItems = document.querySelectorAll('.menu li');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const menu = document.querySelector('.menu');
+    const menuItems = document.querySelectorAll('.menu li');
 
-  burgerMenu.addEventListener('click', function() {
-      burgerMenu.classList.toggle('active');
-      menu.classList.toggle('active');
-  });
+    burgerMenu.addEventListener('click', function() {
+        burgerMenu.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
 
-  menuItems.forEach(function(item) {
-      item.addEventListener('click', function() {
-          burgerMenu.classList.remove('active');
-          menu.classList.remove('active');
-      });
-  });
+    menuItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            burgerMenu.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1000) {
+            burgerMenu.classList.remove('active');
+            menu.classList.remove('active');
+        }
+    });
 </script>
+
+
 
