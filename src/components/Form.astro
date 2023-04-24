@@ -1,5 +1,5 @@
 ---
-
+const {overskrift, name, text} = Astro.props; 
 ---
 <form>
     <label for="name">Navn:</label>
@@ -13,9 +13,11 @@
 
 
 
+
+
+
 <script>
-    const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials";
-    const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
+    
 
 const form = document.querySelector("form");
 form.addEventListener("submit", sendForm);
@@ -30,15 +32,6 @@ function sendForm(event){
     //console.log(formData.name.value);
 
 
-fetch(url, {
-    method:"POST",
-    headers:{
-        apikey: key,
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-    },
-    body:JSON.stringify({name,text,overskrift}),
-})
 
 }
 
