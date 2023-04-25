@@ -9,21 +9,22 @@ import Instagram from "../components/Instagram.astro";
 import Footer from "../components/Footer.astro";
 
 import Form from "../components/Form.astro";
-import Testimonials from "../components/Testimonials.astro";
-/* 
-const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?approved=is.true";
-    const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
+import Testimonial from "../components/Testimonial.astro";
 
-fetch(url, {
-    method:"POST",
+const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?select=id'";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
+
+const response = await fetch(url, {
+    method:"GET",
     headers:{
         apikey: key,
         'Accept':'application/json',
         'Content-Type':'application/json'
     },
-    body:JSON.stringify({name,text,overskrift}),
-})
- */
+});
+
+const udsagn = await response.json();
+
 ---
 
 
@@ -31,7 +32,7 @@ fetch(url, {
 
 <Mainlayout>
 	<body>
-	<main>
+	
 <Nav/>
 
 <Velkommen/>
@@ -41,24 +42,18 @@ fetch(url, {
 
 <Anmeldelser/>
 
-<!-- <Form/>
+ <Form/>
 <section>
 <ul>
 	{
-		udsagn.map((testimonial)) => { reurn <Testimonials name = {testimonials.name} overskrift{ testimonials.overskrift} text = {testimonials.text}
-
-		}
+		udsagn.map((testimonial) => { 
+    return <Testimonial name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text}/>
+    })
 	}
 </ul>
-</section> -->
-
-<!-- <Testimonials/> -->
-
+</section> 
 <Menu/>
 <Instagram/>
 <Footer/>
-
-
-</main>	
 </body>
 </Mainlayout>
