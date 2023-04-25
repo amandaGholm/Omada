@@ -11,18 +11,18 @@ import Footer from "../components/Footer.astro";
 import Form from "../components/Form.astro";
 import Testimonial from "../components/Testimonial.astro";
 
-const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?select=id'";
+const url ="https://sklwitlqpafhgkejasif.supabase.co/rest/v1/Testimonials?approved=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrbHdpdGxxcGFmaGdrZWphc2lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTUzNzIsImV4cCI6MTk5NzI5MTM3Mn0.WW_GsI2Z6doxxy4U0TKPROuEAgS1j6crQDuYPm0IdJ4";
 
-const response = await fetch(url, {
-    method:"GET",
-    headers:{
-        apikey: key,
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-    },
+const response = await fetch(url,{
+	method: "GET",
+	headers: {
+		apikey: key,
+		'Accept' :'application/json',
+		'Content-Type' :'application/json'
+	},
+	
 });
-
 const udsagn = await response.json();
 
 ---
@@ -31,20 +31,44 @@ const udsagn = await response.json();
 <Nav/>
 <Velkommen/>
 <Produkter/>
-<Anmeldelser/>
+
 <Form/>
-<section>
-<ul>
-	{
+<hr>
+<h2>Seneste anmeldelser</h2>
+<section class="anmeldelser">
+    {
 		udsagn.map((testimonial) => {
-return <Testimonial name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text}/>
+return <Anmeldelser overskrift = {testimonial.overskrift} text = {testimonial.text}/>
 		})
 
 		}
-</ul>
-</section> 
+</section>
+
+<hr>
 <Menu/>
 <Instagram/>
 <Footer/>
 </body>
 </Mainlayout>
+
+<style>
+
+.anmeldelser{
+   display: grid;
+   gap: 20px;
+   margin: 20px;
+}
+  @media (min-width: 700px) {
+  .anmeldelser {
+    grid-template-columns: repeat(3, 1fr);
+  } }
+
+  h2{
+  display: grid;
+  justify-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1rem;
+}
+  
+</style>
