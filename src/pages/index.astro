@@ -26,30 +26,21 @@ const response = await fetch(url, {
 const udsagn = await response.json();
 
 ---
-
-
-
-
 <Mainlayout>
-	<body>
-	
+	<body>	
 <Nav/>
-
 <Velkommen/>
-
-
 <Produkter/>
-
 <Anmeldelser/>
-
- <Form/>
+<Form/>
 <section>
 <ul>
 	{
-		udsagn.map((testimonial) => { 
-    return <Testimonial name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text}/>
-    })
-	}
+		udsagn.map((testimonial) => {
+return <Testimonial name = {testimonial.name} overskrift = {testimonial.overskrift} text = {testimonial.text}/>
+		})
+
+		}
 </ul>
 </section> 
 <Menu/>
